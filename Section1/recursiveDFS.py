@@ -1,7 +1,8 @@
 from state import State
 from node import Node
 
-class RecursiveDFS():
+
+class RecursiveDFS:
     # perform DFS search
 
     def search(self):
@@ -30,7 +31,7 @@ class RecursiveDFS():
 
         else:
             # find the sucessor states from current states
-            childStates = node,state.sucessorFunction()
+            childStates = node, state.sucessorFunction()
 
             # add these states as children nodes of current node
             for childState in childStates:

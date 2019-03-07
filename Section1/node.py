@@ -2,7 +2,7 @@ class Node:
     # represents a node in the search tree
     def __init__(self, state):
         # Constructor
-        self.state=state
+        self.state = state
         self.depth = 0
         self.children = []
         self.parent = None
@@ -11,7 +11,7 @@ class Node:
         # add a node under another Node
         self.children.append(childNode)
         childNode.parent = self
-        childNode.depth = self.depth +1
+        childNode.depth = self.depth + 1
 
     def printTree(self):
         # print the tree

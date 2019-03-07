@@ -2,11 +2,12 @@ import pydot
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
+
 class TreePlot:
     # create a plot for the search tree
     def __init__(self):
         # Constructor
-        self.graph = pydot.Dot(graph_type='graph', dpi = 300)
+        self.graph = pydot.Dot(graph_type="graph", dpi=300)
         self.index = 0
 
     def createGraph(self, node):
@@ -15,9 +16,10 @@ class TreePlot:
         """
 
         # create node
-        parentGraphNode = pydot.Node(str(self.index)+ " " + \
-        node.state.value, style="filled")
-        self.index +=1
+        parentGraphNode = pydot.Node(
+            str(self.index) + " " + node.state.value, style="filled"
+        )
+        self.index += 1
 
         # add node
         self.graph.add_node(parentGraphNode)
@@ -40,10 +42,10 @@ class TreePlot:
         self.createGraph(rootNode, currentNode)
 
         # show the diagram
-        self.graph.write_png('graph.png')
-        img=mpimg.imread('graph.png')
+        self.graph.write_png("graph.png")
+        img = mpimg.imread("graph.png")
         plt.imshow(img)
-        plt.axis('off')
+        plt.axis("off")
         mng = plt.get_current_fig_manager()
-        mng.window.state('zoomed')
+        mng.window.state("zoomed")
         plt.show()
