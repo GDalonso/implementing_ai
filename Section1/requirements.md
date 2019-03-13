@@ -13,6 +13,10 @@ To build visual interfaces
 `sudo add-apt-repository ppa:kivy-team/kivy`
 `sudo apt-get install python3-kivy`
 
+### TKinter
+dependency of visuals
+`sudo apt-get install python3-tk`
+
 ## Validating installation
 `dot -V` - Graphviz
 
@@ -22,4 +26,6 @@ To build visual interfaces
 ```import pydot
 import pydotplus
 import matplotlib
-import kivy```
+import kivy
+import tkinter
+```
