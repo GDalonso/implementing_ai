@@ -3,10 +3,11 @@ import collections
 import numpy as np
 import copy
 
+
 class State:
     "retrieve the state information for a seach app"
 
-    def __init__(self, assignment = None, variable=None, value=None):
+    def __init__(self, assignment=None, variable=None, value=None):
         if value == None:
             # Create a initial state
             self.assignment = self.getInitialState()
@@ -27,6 +28,7 @@ class State:
         for variable in CSP.variables:
             if variable not in self.assignment:
                 return variable
+
     def orderDomainValues(self):
         # returns the values in a particulas orderDomainValues
         return CSP.domainValues
@@ -37,7 +39,7 @@ class State:
 
     def drawState(self):
         # draws the state6
-        image = np.zeros((7,7,3), np.uint8)
+        image = np.zeros((7, 7, 3), np.uint8)
         for key in self.assignment:
             # find the channel index
             if self.assignment[key] == "red":
@@ -50,7 +52,7 @@ class State:
                 # code for blue
                 channelIndex = 2
             for (xcoord, ycoord) in CSP.positions[key]:
-                image[xcoord,ycoord,channelIndex] = 255
+                image[xcoord, ycoord, channelIndex] = 255
         return image
 
     # def sucessorFunction(self):

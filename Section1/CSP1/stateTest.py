@@ -2,7 +2,7 @@ from statecsp1 import State
 import matplotlib.pyplot as plt
 import CSP
 
-initialState=State()
+initialState = State()
 intermediateState = State(initialState.assignment, "state1", "red")
 
 print("intermediateState", intermediateState.assignment)
@@ -12,10 +12,7 @@ print("orderDomainValues", initialState.orderDomainValues())
 image = intermediateState.drawState()
 plt.imshow(image)
 
-font = {'family': 'serif',
-        'color': 'white',
-        'weight':'normal',
-        'size':14,}
+font = {"family": "serif", "color": "white", "weight": "normal", "size": 14}
 for variable in CSP.variables:
     # get average positions
     avgx = 0
